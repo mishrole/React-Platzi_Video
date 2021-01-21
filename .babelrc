@@ -1,0 +1,10 @@
+// Babel core: todas las herramientas
+// Babel loader: Trabaja con Webpack
+// Babel preset: Entender y transformar código
+
+{
+    "presets": [
+        "@babel/preset-env", // ES5 y ES6
+        "@babel/preset-react" // JSX React
+    ]
+}
