@@ -8,7 +8,7 @@ const useInitialState = (API) => {
     // const [videos, setVideos] = useState([]);
 
     const [videos, setVideos] = useState({ mylist: [], trends: [], originals: [] });
-
+    const [categories, setCategories] = useState([]);
     // useEffect recibe dos parámetros que escucha si una propiedad cambia
     // para actualizarse, si no la colocamos generamos un loop infinito
 
@@ -17,11 +17,11 @@ const useInitialState = (API) => {
         .then(response => response.json())
         .then(data => {
             setVideos(data)
+            setCategories(Object.keys(data));
         });
     }, []);
 
-    return videos;
-
+    return [videos, categories];
 };
 
 export default useInitialState;
